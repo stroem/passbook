@@ -1,10 +1,5 @@
 package passbook
 
-import (
-	"encoding/json"
-	"errors"
-)
-
 // Beacon Dictionary: Information about a location beacon. Available in iOS 7.0.
 type Beacon struct {
 	ProximityUUID string `json:"proximityUUID"`          // Unique identifier of a Bluetooth Low Energy location beacon.
