@@ -1,10 +1,5 @@
 package passbook
 
-import (
-	"encoding/json"
-	"errors"
-)
-
 // Barcode Dictionary: Information about a pass’s barcode.
 type Barcode struct {
 	Format          BarcodeFormat `json:"format"`            // Barcode format.
@@ -12,10 +7,10 @@ type Barcode struct {
 	MessageEncoding string        `json:"messageEncoding"`   // Textencodingthatisusedtoconvertthemessage from the string representation to a data representation to render the barcode.
 	AltText         string        `json:"altText,omitempty"` // Text displayed near the barcode. For example, a human-readable version of the barcode data in case the barcode doesn’t scan.
 }
-
+/*
 func (b Barcode) MarshalJSON() ([]byte, error) {
-	if b.Format != PKBarcodeFormatQR ||
-		b.Format != PKBarcodeFormatPDF417 ||
+	if b.Format != PKBarcodeFormatQR &&
+		b.Format != PKBarcodeFormatPDF417 &&
 		b.Format != PKBarcodeFormatAztec {
 		return nil, errors.New("Barcode format must be one of the following values: " +
 			"PKBarcodeFormatQR, PKBarcodeFormatPDF417, PKBarcodeFormatAztec")
@@ -28,3 +23,4 @@ func (b Barcode) MarshalJSON() ([]byte, error) {
 	}
 	return json.Marshal(b)
 }
+*/
